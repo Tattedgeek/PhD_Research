@@ -1,1 +1,19 @@
+# OpenAI (budget)
+pip install openai openpyxl tqdm
+$env:OPENAI_API_KEY=""
+python genai_bias_research_openai.py --input ChatGPT_Test_File.xlsx --column B --header-row 3 --model gpt-4o-mini --temperature 1.0 --llm-classify
 
+# Perplexity (budget)
+pip install openai openpyxl tqdm
+$env:PERPLEXITY_API_KEY=""
+python genai_bias_research_perplexity.py --input Perplexity_Test_File.xlsx --column B --header-row 3 --model sonar --temperature 1.0 --llm-classify
+
+# Gemini (budget)
+pip install google-genai openpyxl tqdm
+$env:GOOGLE_API_KEY=""
+python genai_bias_research_gemini.py --input Gemini_Test_File.xlsx --column B --header-row 3 --model gemini-3.5-flash-lite --temperature 1.0 --llm-classify
+
+# Claude
+pip install anthropic openpyxl tqdm
+$env:ANTHROPIC_API_KEY=""
+python genai_bias_research_claude.py --input Claude_Test_File.xlsx --column B --header-row 3 --model claude-haiku-4-5 --temperature 1.0 --llm-classify
